@@ -1,3 +1,8 @@
+/* 
+GLOBAL STYLES
+==============================================================
+*/
+
 html {
     box-sizing: border-box;
 }
@@ -20,11 +25,19 @@ a {
     color: black;
 }
 
-.fixed-content {
-    position: fixed;
-    background: white;
+i {
+    color: white;
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+
+h2 {
     margin: 0;
-    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 40px;
+    padding-bottom: 20px;
 }
 
 nav,
@@ -36,8 +49,35 @@ h4 {
 }
 
 .about p,
-.contact p {
+.contact p,
+.home-page a, 
+.about a {
     font-family: Oswald, sans-serif;
+}
+
+.home-page a, 
+.start-training a {
+    background: rgba(254, 97, 72, 1);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.about, 
+.facility {
+    background: #252429;
+    color: white;
+    padding: 50px 0;
+}
+
+/* 
+NAVIGATION
+==============================================================
+*/
+.fixed-content {
+    position: fixed;
+    background: white;
+    margin: 0;
+    width: 100%;
 }
 
 .image-container {
@@ -59,10 +99,11 @@ nav li {
 }
 
 
-h2 {
-    margin: 0;
-}
 
+/* 
+HOME PAGE 
+==============================================================
+*/
 .home-page {
     background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url('src/cover.jpg');
     background: -o-linear-gradient(left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('src/cover.jpg');
@@ -95,28 +136,17 @@ h2 {
 }
 
 .home-page a {
-    background: rgba(254, 97, 72, 1);
     padding: 6px 12px;
-    font-size: 12px;
-    cursor: pointer;
 }
 
-.about {
-    background: #252429;
-    color: white;
-    padding: 50px 0;
-    
-}
 
+/* 
+ABOUT 
+==============================================================
+*/
 .about-content {
     width: 90%;
     margin: 0 auto;
-}
-
-.about h2 {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 40px;
 }
 
 .about img {
@@ -126,12 +156,54 @@ h2 {
 }
 
 .about p {
-    width: 90%;
+    width: 85%;
+}
+
+.about-icons {
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.about h3 {
+    font-size: 30px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    width: 60%;
+    margin: 30px auto;
+}
+
+.start-training {
+    text-align: center;
+}
+
+.start-training a {
+    margin: 0 auto;
+    text-align: center;
+    padding: 6px 45px;
 }
 
 
+/* 
+IMAGE CAROSEL
+==============================================================
+*/
+.image-carosel {
+    height: 100px;
+    background: white;
+}
 
 
+/* 
+FACILITY
+==============================================================
+*/
+
+
+
+/* 
+CONTACT 
+==============================================================
+*/
 .contact {
     background: rgba(254, 97, 72, 1);
 }
