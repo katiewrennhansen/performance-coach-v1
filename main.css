@@ -49,7 +49,9 @@ h2,
 h3,
 h4,
 address,
-.contact p {
+.contact p,
+.services h1,
+.services h2 {
     font-family: 'Jockey One', sans-serif;
 }
 
@@ -60,15 +62,22 @@ address,
 input[type="text"],
 input[type="email"],
 textarea,
-input[type="submit"] {
+input[type="submit"],
+.services p,
+.thumbnail a {
     font-family: Oswald, sans-serif;
 }
 
 .home-page a, 
-.start-training a {
+.start-training a,
+.thumbnail a {
     background: rgba(254, 97, 72, 1);
     font-size: 14px;
     cursor: pointer;
+}
+
+.book:hover {
+
 }
 
 .about, 
@@ -81,9 +90,16 @@ input[type="submit"] {
 .about-content,
 .facility-content,
 .contact-content,
-.image-carosel-content {
+.image-carosel-content,
+.services-content {
     width: 90%;
     margin: 0 auto;
+}
+
+.book:hover {
+    background-color: rgba(254, 97, 72, 0.75);
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
 }
 
 
@@ -175,6 +191,10 @@ nav li {
     opacity: 1;
 }
 
+.nav-link a:hover {
+    color: rgba(254, 97, 72, 1);
+
+}
 
 /* 
 HOME PAGE 
@@ -210,7 +230,8 @@ h1 {
     margin-bottom: 30px;
 }
 
-.home-page a {
+.home-page a,
+.thumbnail a {
     padding: 6px 12px;
 }
 
@@ -365,6 +386,21 @@ input[type="submit"] {
     text-align: center;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: 2px solid white;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    color: white;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+}
+
 .copyright p {
     font-size: 12px;
     text-align: center;
@@ -409,7 +445,7 @@ input[type="submit"] {
     }
     .home-page a, 
     .start-training a {
-        font-size: 25px;
+        font-size: 20px;
         padding: 12px 40px;
     }
     .home-page p {
@@ -442,9 +478,91 @@ input[type="submit"] {
     }
 
 
+}
 
 
 
+
+
+
+
+/* SERVICES
+========================================================= */
+.services-main {
+    background-color: #252429;
+}
+
+.services {
+    padding-top: 250px;
+    color: white;
+}
+
+.services h1 {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 45px;
+    letter-spacing: 0.1em;
+}
+
+.services h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    text-transform: none;
+}
+
+.services p {
+    margin: 10px 0 20px;
+}
+
+.thumbnail-container {
+    padding-bottom: 50px;
+}
+
+.thumbnail {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-img {
+    width: 100%;
+}
+
+.service-content {
+    padding: 20px 0;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid rgba(186, 186, 186, 0.25);
+    margin-top: 30px;
+}
+
+.book-btn {
+    padding: 12px 16px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .services h1 {
+        padding: 80px 0 140px;
+        font-size: 70px;
+    }
+    .thumbnail-container {
+        display: flex;
+    }
+    .thumbnail {
+        border: 1px solid white;
+        margin: 0 10px;
+    }
+    .service-content {
+        padding: 30px;
+        text-align: center;
+    } 
+    .services a {
+        padding: 10px 22px;
+    }
     
-
 }

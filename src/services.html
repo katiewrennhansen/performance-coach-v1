@@ -23,55 +23,90 @@
                     </button>
                     <div class="collapse-content">
                         <ul>
-                            <li class="nav-link"><a href="../index.html">Home</a></li>
+                            <li class="nav-link"><a href="../index.html#home">Home</a></li>
                             <li class="nav-link"><a href="../index.html#about">About</a></li>
                             <li class="nav-link"><a href="../index.html#facility">Location / Calendar</a></li>
                             <li class="nav-link"><a href="../index.html#contact">Contact</a></li>
-                            <li class="nav-link"><a href="#">Services</a></li>
+                            <li class="nav-link"><a href="#services">Services</a></li>
                         </ul> 
                     </div>
                 </nav>
-                
             </div>
         </header>
 
-        <main>
-            <section class="services">
-                <h1>Services</h1>
+        <main class="services-main">
+            <section class="services" id="services">
+                <div class="services-content">
+                    <h1>Services</h1>
+                    <div class="thumbnail-container">
+                        <div class="thumbnail">
+                            <img class="service-img" src="images/SAQ.png" alt="photo for SAQ training">
+                            <div class="service-content">
+                                <h2>SAQ</h2>
+                                <p>1hr | $60</p>
+                                <a class="book-btn book" href="src/services.html">Book It</a>
+                            </div>
+                        </div>
 
+                        <hr>
+
+                        <div class="thumbnail">
+                            <img class="service-img" src="images/TeanCamp.png" alt="photo for SAQ training">
+                            <div class="service-content">
+                                <h2>Team Camp</h2>
+                                <p>1hr | $60</p>
+                                <a class="book-btn book" href="src/services.html">Book It</a>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="thumbnail">
+                            <img class="service-img" src="images/PerformanceTraining.png" alt="photo for SAQ training">
+                            <div class="service-content">
+                                <h2>Performance Training</h2>
+                                <p>1hr | $60</p>
+                                <a class="book-btn book" href="src/services.html">Book It</a>
+                            </div>
+                        </div>
+
+                        <hr>
+                    </div>
+                </div>
             </section>
-            
-
-
         </main>
 
-        <footer class="contact">
+        <footer class="contact" id="contact">
             <div class="contact-content">
-                <h2>Contact Us</h2>
-                <h4>Write of call if you have more questions</h4>
-                <p><a href="mailto:iamtheperformancecoach@gmail.com">iamtheperformancecoach@gmail.com</a></p>
-                <p>480-253-9781</p>
-                <div class="icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#header"><i class="fas fa-chevron-up"></i></a>
+                <div class="col1">
+                    <h2>Contact Us</h2>
+                    <h4>Write of call if you have more questions</h4>
+                    <p><a href="mailto:iamtheperformancecoach@gmail.com">iamtheperformancecoach@gmail.com</a></p>
+                    <p>480-253-9781</p>
+                    <div class="icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#header"><i class="fas fa-chevron-up"></i></a>
+                    </div>
                 </div>
-                <form action="">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="text" placeholder="Subject">
-                    <textarea rows="5" placeholder="Message"></textarea>
-                    <input type="submit">
-                </form>
-                <div class="copyright">
-                    <p><i class="far fa-copyright"></i> 2019. The Performance Coach. All Rights Reserved.</p>
-                </div>
+                <div class="col2">
+                    <form action="">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="Subject">
+                        <textarea rows="5" placeholder="Message"></textarea>
+                        <input class="submit" type="submit">
+                    </form>
+                    <div class="copyright">
+                        <p><i class="far fa-copyright"></i> 2019. The Performance Coach. All Rights Reserved.</p>
+                    </div>
+                <div>  
             </div>
         </footer>
 
 
-        <script src='index.js'></script>
+        <script src='../index.js'></script>
     </body>
 
 </html>
