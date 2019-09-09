@@ -5,6 +5,9 @@ GLOBAL STYLES
 
 html {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -44,21 +47,27 @@ nav,
 .home-page,
 h2,
 h3,
-h4 {
+h4,
+address,
+.contact p {
     font-family: 'Jockey One', sans-serif;
 }
 
 .about p,
-.contact p,
 .home-page a, 
-.about a {
+.about a,
+.facility p,
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="submit"] {
     font-family: Oswald, sans-serif;
 }
 
 .home-page a, 
 .start-training a {
     background: rgba(254, 97, 72, 1);
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -66,8 +75,17 @@ h4 {
 .facility {
     background: #252429;
     color: white;
-    padding: 50px 0;
+    padding: 60px 0;
 }
+
+.about-content,
+.facility-content,
+.contact-content,
+.image-carosel-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 /* 
 NAVIGATION
@@ -81,23 +99,81 @@ NAVIGATION
 }
 
 .image-container {
+    padding-top: 20px;
     text-align: center;
 }
 
-nav {
-    display: flex;
+.toggle-button {
+    position: absolute;
+    top: 155px;
+    right: 30px;
+    background: none;
+    border: none;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.burger-bar {
+    background-color: rgba(254, 97, 72, 1);
+    width: 25px;
+    height: 3px;
+    margin: 6px 5px;
+    border-radius: 4px;
+    transition-duration: 300ms;
+}
+
+.cross .burger-bar {
+    background-color: black;
+}
+
+.cross > #bb-two {
+    display: none;
+}
+
+.cross > #bb-one {
+    transform: rotate(45deg) translate(6px, 7px);
+    width: 30px;
+    transition-duration: 300ms;
+}
+
+.cross > #bb-three {
+    transform: rotate(-45deg);
+    width: 30px;
+    transition-duration: 300ms;
 }
 
 nav ul {
     padding: 0;
     list-style: none;
-    display: flex;
+    text-align: center;
+    font-family: 'Manjari', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.1em;
 }
 
 nav li {
-    margin: 0 10px;
+    padding: 20px 0;
 }
 
+.collapse-content {
+    height: 0;
+    background: white;
+    margin-top: 60px;
+    font-size: 30px;
+    padding: 0 20px 0;
+    transition: opacity 400ms;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.toggle {
+    height: 90vh;
+    transition: opacity 400ms;
+    opacity: 1;
+}
 
 
 /* 
@@ -105,9 +181,9 @@ HOME PAGE
 ==============================================================
 */
 .home-page {
-    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url('src/cover.jpg');
-    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('src/cover.jpg');
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('src/cover.jpg');
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url('src/images/cover.jpg');
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('src/images/cover.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('src/images/cover.jpg');
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -120,10 +196,9 @@ HOME PAGE
     width: 90%;
     margin: 0 auto;
     padding-top: 40vh;
-
 }
 
-.home-page h1 {
+h1 {
     letter-spacing: 0.2em;
     font-size: 35px;
 }
@@ -144,10 +219,6 @@ HOME PAGE
 ABOUT 
 ==============================================================
 */
-.about-content {
-    width: 90%;
-    margin: 0 auto;
-}
 
 .about img {
     border-radius: 50%;
@@ -197,8 +268,27 @@ IMAGE CAROSEL
 FACILITY
 ==============================================================
 */
+.facility h2 {
+    letter-spacing: 0.32em;
+}
 
+.facility h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.36em;
+    font-size: 25px;
+}
 
+.location {
+    padding-top: 50px;
+    text-align: center;
+}
+
+address {
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
 
 /* 
 CONTACT 
@@ -206,4 +296,155 @@ CONTACT
 */
 .contact {
     background: rgba(254, 97, 72, 1);
+}
+
+.contact-content {
+    padding: 40px 0 30px;
+}
+
+.contact h4 {
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+}
+
+.contact p, .contact a {
+    font-size: 20px;
+    letter-spacing: 0.1em;
+}
+
+.contact .icons {
+    margin-top: 50px;
+}
+
+.contact .fab {
+    color: black;
+
+}
+
+.contact .fas {
+    color: black;
+    font-size: 30px;
+}
+
+.contact.far {
+    color: black;
+    align-self: flex-end;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="submit"]{
+    border: 2px solid black;
+    background: rgba(254, 97, 72, 1);
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+input[type="textarea"] {
+    height: 50px;
+}
+
+::placeholder {
+    color: black;
+}
+
+input[type="submit"] {
+    width: 30%;
+    text-align: center;
+}
+
+.copyright p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.copyright i {
+    font-size: 12px;
+    color: black;
+    margin: 0;
+}
+
+@media (min-width: 768px){
+    .image-container img {
+        width: 300px;
+    }
+    .toggle-button {
+        display: none;
+    }   
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav li {
+        padding: 0;
+        margin: 0 15px;
+        font-family: 'Jockey One', sans-serif;
+    }
+    .collapse-content {
+        transition-duration: 0ms;
+        opacity: 1;
+        font-size: 20px;
+        height: auto;
+        margin: 0;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    .home-page p {
+        font-size: 26px;
+    }
+    .home-page a, 
+    .start-training a {
+        font-size: 25px;
+        padding: 12px 40px;
+    }
+    .home-page p {
+        margin-bottom: 50px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    .headshot {
+        float: right;
+    }
+    .about-content p {
+        width: 50%;
+        font-size: 20px;
+    }
+    .about h3 {
+        font-size: 32px;
+        width: 80%;
+        margin: 50px auto;
+    }
+    i {
+        font-size: 30px;
+    }
+    .facility p {
+        font-size: 20px;
+    }
+    .contact-content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+
+
+
+    
+
 }
