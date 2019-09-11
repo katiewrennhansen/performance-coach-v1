@@ -284,95 +284,84 @@ IMAGE CAROSEL
 }
 
 .image-carosel-content {
-    padding: 100px 0;
-}
-
-.slideshow-container {
     position: relative;
 }
 
-.carosel-container img {
-    width: 100%;
+.slider {
     position: relative;
+    overflow: hidden;
+    height: 75vh;
+    width: 100vw;
 }
 
-.container {
-    position: relative;
-    width: 100%; 
-}
-
-.container img {
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
-.hidden {
-    display: none;
+.current {
+    opacity: 1;
 }
 
-.caption {
-    color: #f2f2f2;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    padding: 8px 12px;
+.slide .content {
     position: absolute;
-    bottom: 12px;
-    width: 100%;
-    text-align: center;
+    bottom: 100px;
+    left: -400px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.721);
+    padding: 35px;
+    opacity: 0;
 }
 
-.image-carosel a {
-    color: white;
-    text-decoration: none;
-}
-
-.number {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    z-index: 1;
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(400px);
+    transition: all 700ms ease-in-out 300ms;
 }
 
 
-.right, .left {
+#next, #prev {
     cursor: pointer;
-    position: relative;
     position: absolute;
-    top: 40%;
+    top: 50%;
+    margin-top: -16px;
     padding: 20px;
     color: white;
-    font-size: 30px;
+    font-size: 35px;
 }
 
-.right {
+#next{
     right: 0px;
 }
 
-.right:hover,
-.left:hover {
+#next:hover,
+#prev:hover {
     color: rgb(211, 211, 211);
     transition-duration: 200ms;
     transition-timing-function: ease-in-out;
 }
 
-.image-controls {
-    margin-top: -4px;
-    text-align: center;
-    display: flex;
+
+
+
+.slide:nth-child(1) {
+    background: url('./src/images/SAQ.png') no-repeat center center/cover;
 }
 
-.image-controls img {
-    width: 70px;
-    height: 70px;
+.slide:nth-child(2) {
+    background: url('./src/images/TeanCamp.png') no-repeat center center/cover;
 }
 
-.image-controls img:hover {
-    cursor: pointer;
-    opacity: 0.5;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in-out;
+.slide:nth-child(3) {
+    background: url('./src/images/PerformanceTraining.png') no-repeat center center/cover;
 }
+
+
 /* 
 FACILITY
 ==============================================================
@@ -501,6 +490,18 @@ input[type="submit"]:hover {
     margin: 0;
 }
 
+@media (max-width: 500px){
+    .slide .content {
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        padding: 0 30px;
+    }
+    .slide.current .content {
+        transform: translateY(-300px);
+    }
+}
 @media (min-width: 768px){
     .image-container img {
         width: 300px;
